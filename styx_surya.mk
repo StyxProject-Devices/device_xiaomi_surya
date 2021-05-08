@@ -23,6 +23,7 @@ $(call inherit-product, device/xiaomi/surya/device.mk)
 
 # Inherit from common StyxOS configuration
 TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_GAPPS_ARCH := arm64
 $(call inherit-product, vendor/styx/config/common.mk)
 
 # Device identifier
@@ -42,4 +43,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="$(BUILD_DESCRIPTION)"
-DEVICE_MAINTAINER := AP_XD
+
+#STYX PROPERTIES
+STYX_BUILD_VARIANT := OFFICIAL
+PRODUCT_PRODUCT_PROPERTIES += \
+    org.styxproject.maintainer=AP-XD
