@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020 Wave-OS
+# Copyright (C) 2020 Styx-OS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,12 +21,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 # Inherit from surya device
 $(call inherit-product, device/xiaomi/surya/device.mk)
 
-# Inherit from common WaveOS configuration
+# Inherit from common StyxOS configuration
 TARGET_BOOT_ANIMATION_RES := 1080
-$(call inherit-product, vendor/wave/configs/common.mk)
+$(call inherit-product, vendor/styx/config/common.mk)
 
 # Device identifier
-PRODUCT_NAME := wave_surya
+PRODUCT_NAME := styx_surya
 PRODUCT_DEVICE := surya
 PRODUCT_BRAND := POCO
 PRODUCT_MODEL := POCO X3
@@ -34,11 +34,12 @@ PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 # Fingerprint
-BUILD_FINGERPRINT := google/redfin/redfin:11/RQ2A.210405.005/7181113:user/release-keys
-BUILD_DESCRIPTION := redfin-user 11 RQ2A.210405.005 7181113 release-keys
+BUILD_FINGERPRINT := google/redfin/redfin:11/RQ2A.210505.003/7255357:user/release-keys
+BUILD_DESCRIPTION := redfin-user 11 RQ2A.210505.003 7255357 release-keys
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.fingerprint=$(BUILD_FINGERPRINT)
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="$(BUILD_DESCRIPTION)"
+DEVICE_MAINTAINER := AP_XD
